@@ -15,8 +15,8 @@ def getQuote():
 	response = requests.get(url)
 	if (response.ok):
 		try:
-			jData = json.loads(response.content)
-			quote = (jData['quoteText']).decode("unicode_escape")
+			jData = json.loads(response.content.decode('utf-8'))
+			quote = (jData['quoteText'])
 			if(jData['quoteAuthor'] == ''):
 				author = "Anonymous"
 			else:
