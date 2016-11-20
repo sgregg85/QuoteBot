@@ -23,7 +23,7 @@ def getQuote():
 			else:
 				author = jData['quoteAuthor']
 			tweet = quote + " -" + author
-			if(len(tweet) > 160): #if the tweet is more than 160 characters, we need another quote
+			if(len(tweet) > 140): #if the tweet is more than 140 characters, we need another quote
 				print("Quote too long")
 				getQuote()
 			api.update_status(tweet)
